@@ -6,13 +6,11 @@ import { Movies } from './pages/Movies';
 import { Podcast } from './pages/Podcast';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import TopBanner from './blah';
-// import MovieList from './Movies';
 
 function App() {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="primary" variant="dark" expand="lg">
         <Navbar.Brand href="/">Devon Wolsleger's Awesome website</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

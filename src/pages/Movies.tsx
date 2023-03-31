@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import movieData from '../MovieData.json';
+import '../Styles/styles.css';
 
 type Movie = {
   Category: string;
@@ -23,11 +24,11 @@ export function Movies() {
 
   return (
     <div className="container">
-      <h1 className="mb-4">Movie List</h1>
+      <h1 style={{ color: '#FF5733', fontSize: '3rem' }}>Movie List</h1>
       {movies.length > 0 ? (
-        <table className="table">
-          <thead className="table-dark">
-            <tr>
+        <table className="table table-striped table-bordered">
+          <thead>
+            <tr style={{ backgroundColor: '#FFC300' }}>
               <th>Category</th>
               <th>Title</th>
               <th>Year</th>
@@ -42,15 +43,13 @@ export function Movies() {
                 <td>{movie.Title}</td>
                 <td>{movie.Year}</td>
                 <td>{movie.Director}</td>
-                <td>{movie.Rating}</td>
+                <td style={{ color: '#0074D9' }}>{movie.Rating}</td>
               </tr>
             ))}
           </tbody>
         </table>
       ) : (
-        <div className="d-flex justify-content-center align-items-center vh-100">
-          <p className="text-center">Loading...</p>
-        </div>
+        <p>Loading...</p>
       )}
     </div>
   );
