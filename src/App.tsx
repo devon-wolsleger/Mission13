@@ -1,25 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Home } from './pages/Home';
+import { Movies } from './pages/Movies';
+import { Podcast } from './pages/Podcast';
+import { Navbar, Nav } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import TopBanner from './blah';
+// import MovieList from './Movies';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar.Brand href="/">Devon Wolsleger's Awesome website</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+            <Link to="/Movies" className="nav-link">
+              Movies
+            </Link>
+            <Link to="/Podcast" className="nav-link">
+              Podcast
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Movies" element={<Movies />} />
+        <Route path="/Podcast" element={<Podcast />} />
+      </Routes>
+    </>
   );
 }
 
